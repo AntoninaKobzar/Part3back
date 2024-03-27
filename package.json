@@ -1,0 +1,27 @@
+{
+  "name": "part3back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntoninaKobzar/Part3back.git"
+  },
+  "author": "AntoninaKobzar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntoninaKobzar/Part3back/issues"
+  },
+  "homepage": "https://github.com/AntoninaKobzar/Part3back#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
