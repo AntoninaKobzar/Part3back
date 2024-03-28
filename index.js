@@ -29,6 +29,14 @@ app.get('/',(request,response)=>{
     response.send('<h1>Hello World</h1>')
 })
 
+
+app.get('/api/info', (request, response) => {
+    const entries = persons.length;
+    const responseTime = new Date().toLocaleString();
+    const info = `Phonebook has info for ${entries} people.<br/> ${responseTime}`;
+    response.send(info);
+});
+
 app.get('/api/persons',(request,response)=>{
     response.json(persons)
 })
