@@ -2,8 +2,8 @@ const express=require('express')
 const morgan = require('morgan')
 const app=express()
 
-const cors = require('cors')
 app.use(express.static('dist'))
+const cors = require('cors')
 app.use(cors())
 
 morgan.token('req-body', (req, res) => {
