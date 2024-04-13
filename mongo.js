@@ -34,11 +34,9 @@ person.save().then(result => {
   mongoose.connection.close()
 })
 
-// person.find({}).then(result => {
-//   result.forEach(person => {
-//     console.log(person)
-//   })
-//   mongoose.connection.close()
-// })
-// node mongo.js QaR6mnOaC3p3rNzo Anna 040-1234556
-//node mongo.js QaR6mnOaC3p3rNzo Osa 050-1334559
+person.find({}).then(result => {
+  result.forEach(person => {
+    console.log(person)
+  })
+  mongoose.connection.close()
+})
