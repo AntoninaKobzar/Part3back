@@ -1,15 +1,14 @@
-
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-if (process.argv.length<3) {
-  console.log('give password as argument')
-  process.exit(1)
-}
+// if (process.argv.length<3) {
+//   console.log('give password as argument')
+//   process.exit(1)
+// }
 
-const password = process.argv[2]
-const url =
-  `mongodb+srv://antoninakobzar:${password}@cluster1.wqrslo1.mongodb.net/persons
-  .persons?retryWrites=true&w=majority`
+// const password = process.argv[2]
+const url =process.env.MONGO_DB
+  
 
 
 
