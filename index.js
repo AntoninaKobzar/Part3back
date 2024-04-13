@@ -112,22 +112,22 @@ const generatedId=()=>{
 app.post('/api/persons', (request, response,next) => {
     const body = request.body;
 
-    if (body.content === undefined) {
-        return response.status(400).json({ error: 'content missing' })
-      }
+    // if (body.content === undefined) {
+    //     return response.status(400).json({ error: 'content missing' })
+    //   }
 
-    if (!body || !body.name || !body.number) {
-        return response.status(400).json({
-            error: 'name or number missing'
-        });
-    }
+    // if (!body || !body.name || !body.number) {
+    //     return response.status(400).json({
+    //         error: 'name or number missing'
+    //     });
+    // }
 
-    const existingPerson = persons.find(person => person.name === body.name);
-    if (existingPerson) {
-        return response.status(400).json({
-            error: 'name must be unique'
-        });
-    }
+    // const existingPerson = persons.find(person => person.name === body.name);
+    // if (existingPerson) {
+    //     return response.status(400).json({
+    //         error: 'name must be unique'
+    //     });
+    // }
 
     const person = new Person({
         name: body.name,
@@ -135,7 +135,7 @@ app.post('/api/persons', (request, response,next) => {
         id: generatedId(),
     });
 
-    persons.push(person);
+    // persons.push(person);
     // response.json(person);
 
     person.save().then(savedPerson => {
