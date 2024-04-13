@@ -125,7 +125,7 @@ app.post('/api/persons', (request, response) => {
         });
     }
 
-    const person = newPerson({
+    const person = new Person({
         name: body.name,
         number: body.number,
         id: generatedId(),
