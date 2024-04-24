@@ -13,14 +13,25 @@ mongoose.connect(url)
   .catch(error => {
     console.log('error connecting to MongoDB:', error.message)
   })
-
+  const phoneNumberValidator = {
+    validator: function(value) {
+      
+      const phoneNumberRegex = /^(\d{2,3})-(\d+)$/;
+      return phoneNumberRegex.test(value);
+    },
+    message: props => `${props.value} is not a valid phone number. Please provide a phone number in the format XX-XXXXXXX or XXX-XXXXXXX.`,
+  };
   const personSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
       minlength: 3
     },
-    number: String,
+    number: {
+      type: String,
+      required: true,
+      validate: phoneNumberValidator
+    },
   })
   
 
